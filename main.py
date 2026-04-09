@@ -1,31 +1,30 @@
-import os
-from dotenv import load_dotenv
-from fluxo_login_doutoriagenda import iniciar_safari, login_doutoriagenda
+from fluxo.criar_tenant import fluxo_criar_tenant
+
+
+def exibir_menu():
+    print("\n==============================")
+    print("      MENU DE AUTOMAÇÃO")
+    print("==============================")
+    print("1 - Criar tenant")
+    print("0 - Sair")
+    print("==============================")
 
 
 def main():
-    load_dotenv()
+    while True:
+        exibir_menu()
+        #opcao = input("Escolha uma opção: ").strip()
+        opcao = "1"
 
-    email = os.getenv("LOGIN_EMAIL")
-    senha = os.getenv("LOGIN_SENHA")
+        if opcao == "1":
+            fluxo_criar_tenant()
 
-    if not email or not senha:
-        print("Erro: verifique se LOGIN_EMAIL, LOGIN_SENHA e LOGIN_SENHA_2 estão no .env")
-        return
+        elif opcao == "0":
+            print("Encerrando o programa...")
+            break
 
-    driver = iniciar_safari()
-
-    try:
-        sucesso, mensagem = login_doutoriagenda(driver, email, senha)
-        print(mensagem)
-
-        if sucesso:
-            input("Login realizado. Pressione ENTER para fechar o navegador...")
         else:
-            input("Falha no login. Pressione ENTER para fechar o navegador...")
-
-    finally:
-        driver.quit()
+            print("❌ Opção inválida. Tente novamente.")
 
 
 if __name__ == "__main__":
