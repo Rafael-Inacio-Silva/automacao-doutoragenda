@@ -23,3 +23,11 @@ def inserir_id_e_nome_medico(driver, id_medico, nome_medico):
 
     print("✅ Campo preenchido com send_keys.")
     return True
+
+def clicar_criar_tenant():
+    """
+    Função simbólica: simula o clique no botão Criar Tenant.
+    Não executa nenhuma ação real.
+    """
+    print("🟡 [SIMULAÇÃO] Botão Criar Tenant foi clicado (ambiente real).")
+    return True

@@ -15,7 +15,7 @@ from acoes.analisador_tenant import analisar_tenant
 from acoes.fechar_caixa_busca_tenant import fechar_modal_tenant
 from acoes.clicar_gerencia_tenant import clicar_opcao_gerencia_tenant
 from acoes.criar_novo_tenant import clicar_botao_tenant
-from acoes.inserir_nome_novo_tenant import inserir_id_e_nome_medico
+from acoes.inserir_nome_novo_tenant import inserir_id_e_nome_medico,clicar_criar_tenant
 
 def fluxo_criar_tenant():
     print("\n=== FLUXO: CRIAR TENANT ===")
@@ -83,6 +83,9 @@ def fluxo_criar_tenant():
 
             print("🖱️ Colando novo tenant...")
             inserir_id_e_nome_medico(driver, id_medico, nome_medico)
+
+            print("🖱️ Simulando click...")
+            clicar_criar_tenant()
 
         input("\nPressione ENTER para fechar...")
 
