@@ -1,4 +1,6 @@
-.env
+.idea/
 __pycache__/
+venv/
+.env
 *.pyc
-.venv/
+.DS_Store
