@@ -12,14 +12,20 @@ from acoes.clicar_campo_Selecione_tenant_trocar import clicar_campo_Selecione_te
 from acoes.inserir_id_medico import inserir_id_medico
 from acoes.extrator_tenant_parecido import extrator_tenant_parecido
 from acoes.analisador_tenant import analisar_tenant
-
+from acoes.fechar_caixa_busca_tenant import fechar_modal_tenant
+from acoes.clicar_gerencia_tenant import clicar_opcao_gerencia_tenant
+from acoes.criar_novo_tenant import clicar_botao_tenant
+from acoes.inserir_nome_novo_tenant import inserir_id_e_nome_medico
 
 def fluxo_criar_tenant():
     print("\n=== FLUXO: CRIAR TENANT ===")
 
     login_usuario = "(33) 99831-1030"
     senha_usuario = "254136Br."
-    id_medico = input("Digite o ID do médico: ").strip()
+    id_medico = "#199"
+    nome_medico = "Mike Cardoso"
+    #id_medico = input("Digite o ID do médico: ").strip()
+    #nome_medico = input("Digite o nome do médico: ").strip()
 
     print("\n📌 Dados recebidos:")
     print(f"Login: {login_usuario}")
@@ -60,8 +66,23 @@ def fluxo_criar_tenant():
         print("🔎 Validando se o tenant é igual, parecido ou não existe...")
         existe_tenant, tenant_encontrado = analisar_tenant(resultado, id_medico)
 
-        if existe_tenant:
-            return
+        if existe_tenant == True:
+            exit()
+        else:
+            print("🔎 Fechando a caixa de busca...")
+            fechar_modal_tenant(driver)
+
+            print("🖱️ Executando clique nas inicial...")
+            clicar_elemento_iniciais(driver)
+
+            print("🖱️ Clicando em trocar tenant...")
+            clicar_opcao_gerencia_tenant(driver)
+
+            print("🖱️ Clicando criar novo tenant...")
+            clicar_botao_tenant(driver)
+
+            print("🖱️ Colando novo tenant...")
+            inserir_id_e_nome_medico(driver, id_medico, nome_medico)
 
         input("\nPressione ENTER para fechar...")
 
