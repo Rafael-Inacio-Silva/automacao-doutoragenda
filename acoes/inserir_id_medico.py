@@ -3,7 +3,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def inserir_id_medico(driver):
+def inserir_id_medico(driver,id_medico):
     print("⌨️ Tentando preencher o campo com 'teste'...")
 
     campo = WebDriverWait(driver, 5).until(
@@ -12,7 +12,7 @@ def inserir_id_medico(driver):
 
     campo.click()
     campo.clear()
-    campo.send_keys("#260")
+    campo.send_keys(id_medico)
 
     print("✅ Campo preenchido com sucesso")
     return True

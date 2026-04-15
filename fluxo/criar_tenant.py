@@ -11,22 +11,18 @@ from acoes.clicar_trocar_tenant import clicar_trocar_tenant
 from acoes.clicar_campo_Selecione_tenant_trocar import clicar_campo_Selecione_tenant_trocar
 from acoes.inserir_id_medico import inserir_id_medico
 from acoes.extrator_tenant_parecido import extrator_tenant_parecido
+from acoes.analisador_tenant import analisar_tenant
 
 
 def fluxo_criar_tenant():
     print("\n=== FLUXO: CRIAR TENANT ===")
 
-    # login_usuario = input("Digite o login: ").strip()
-    # senha_usuario = input("Digite a senha: ").strip()
     login_usuario = "(33) 99831-1030"
     senha_usuario = "254136Br."
-    #id_medico = input("Digite o ID do médico: ").strip()
-    #nome_medico = input("Digite o nome do médico: ").strip()
+    id_medico = input("Digite o ID do médico: ").strip()
 
     print("\n📌 Dados recebidos:")
     print(f"Login: {login_usuario}")
-    #print(f"ID do médico: {id_medico}")
-    #print(f"Nome do médico: {nome_medico}")
 
     driver = iniciar_chrome()
 
@@ -56,11 +52,16 @@ def fluxo_criar_tenant():
         clicar_campo_Selecione_tenant_trocar(driver)
 
         print("🖱️ Inserindo o tenant para busca")
-        inserir_id_medico(driver)
+        inserir_id_medico(driver, id_medico)
+
+        print("🔎 Extraindo os tenants da busca...")
+        resultado = extrator_tenant_parecido(driver)
 
         print("🔎 Validando se o tenant é igual, parecido ou não existe...")
-        resultado = extrator_tenant_parecido(driver)
-        print(resultado)
+        existe_tenant, tenant_encontrado = analisar_tenant(resultado, id_medico)
+
+        if existe_tenant:
+            return
 
         input("\nPressione ENTER para fechar...")
 
