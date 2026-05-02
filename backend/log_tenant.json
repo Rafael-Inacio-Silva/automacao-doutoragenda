@@ -1,0 +1,86 @@
+[
+  {
+    "timestamp": "2026-05-01T20:31:11",
+    "fluxo": "criar_tenant",
+    "etapa": "inicio",
+    "status": "executando",
+    "mensagem": "Iniciando automação",
+    "dados": {}
+  },
+  {
+    "timestamp": "2026-05-01T20:31:11",
+    "fluxo": "criar_tenant",
+    "etapa": "navegador",
+    "status": "executando",
+    "mensagem": "Abrindo navegador",
+    "dados": {}
+  },
+  {
+    "timestamp": "2026-05-01T20:31:12",
+    "fluxo": "criar_tenant",
+    "etapa": "navegador",
+    "status": "concluido",
+    "mensagem": "Navegador iniciado",
+    "dados": {}
+  },
+  {
+    "timestamp": "2026-05-01T20:31:12",
+    "fluxo": "criar_tenant",
+    "etapa": "acesso",
+    "status": "executando",
+    "mensagem": "Acessando DoutorAgenda",
+    "dados": {}
+  },
+  {
+    "timestamp": "2026-05-01T20:31:14",
+    "fluxo": "criar_tenant",
+    "etapa": "acesso",
+    "status": "concluido",
+    "mensagem": "Sistema acessado",
+    "dados": {}
+  },
+  {
+    "timestamp": "2026-05-01T20:31:14",
+    "fluxo": "criar_tenant",
+    "etapa": "login",
+    "status": "executando",
+    "mensagem": "Realizando login",
+    "dados": {}
+  },
+  {
+    "timestamp": "2026-05-01T20:31:17",
+    "fluxo": "criar_tenant",
+    "etapa": "login",
+    "status": "concluido",
+    "mensagem": "Login realizado com sucesso",
+    "dados": {}
+  },
+  {
+    "timestamp": "2026-05-01T20:31:17",
+    "fluxo": "criar_tenant",
+    "etapa": "busca_tenant",
+    "status": "executando",
+    "mensagem": "Buscando tenant informado",
+    "dados": {
+      "id_medico": "#93"
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:31:20",
+    "fluxo": "criar_tenant",
+    "etapa": "busca_tenant",
+    "status": "alerta",
+    "mensagem": "Tenant já existe",
+    "dados": {
+      "tenant_encontrado": "#93 Dra. Renata Fabiani"
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:31:20",
+    "fluxo": "criar_tenant",
+    "etapa": "navegador",
+    "status": "concluido",
+    "mensagem": "Fechando navegador",
+    "dados": {}
+  }
+]

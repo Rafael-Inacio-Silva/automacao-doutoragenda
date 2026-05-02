@@ -1,36 +1,340 @@
-from fluxo.criar_agente import fluxo_criar_agente
-from fluxo.criar_tenant import fluxo_criar_tenant
+import json
+from pathlib import Path
+from queue import Queue
+from threading import Thread
+
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse, FileResponse
+
+from backend.fluxo.criar_tenant import (
+    fluxo_criar_tenant,
+    limpar_arquivo_resultado_tenant,
+    limpar_arquivo_log_tenant,
+    CAMINHO_RESULTADO_TENANT,
+    CAMINHO_LOG_TENANT,
+)
+
+from backend.fluxo.extrair_zarpon import (
+    fluxo_extrair_prompts,
+    limpar_arquivo_resultado_prompts,
+    limpar_arquivo_log_prompts,
+    CAMINHO_RESULTADO_PROMPTS,
+    CAMINHO_LOG_PROMPTS,
+)
 
 
-def exibir_menu():
-    print("\n==============================")
-    print("      MENU DE AUTOMAÇÃO")
-    print("==============================")
-    print("1 - Criar tenant")
-    print("2 - Simular criar agente")
-    print("0 - Sair")
-    print("==============================")
+app = FastAPI(title="Automacao DrIA API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://127.0.0.1:3000",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
-def main():
-    while True:
-        exibir_menu()
-        #opcao = input("Escolha uma opção: ").strip()
-        opcao = "2"
-
-        if opcao == "1":
-            fluxo_criar_tenant()
-
-        elif opcao == "2":
-            fluxo_criar_agente()
-
-        elif opcao == "0":
-            print("Encerrando o programa...")
-            break
-
-        else:
-            print("❌ Opção inválida. Tente novamente.")
+CAMINHO_RAIZ = Path(__file__).resolve().parents[1]
 
 
-if __name__ == "__main__":
-    main()
+def formatar_evento(evento):
+    dados = json.dumps(evento, ensure_ascii=False)
+    return f"data: {dados}\n\n"
+
+
+@app.get("/")
+def home():
+    return {
+        "mensagem": "Backend da Automação DrIA está rodando.",
+        "arquivo_prompts": str(CAMINHO_RESULTADO_PROMPTS),
+        "arquivo_log_prompts": str(CAMINHO_LOG_PROMPTS),
+        "arquivo_tenant": str(CAMINHO_RESULTADO_TENANT),
+        "arquivo_log_tenant": str(CAMINHO_LOG_TENANT),
+    }
+
+
+# =====================================================
+# DOWNLOADS — PROMPTS
+# =====================================================
+
+@app.get("/download/prompts")
+def download_prompts():
+    """
+    Baixa o CSV da execução de prompts.
+    Se o arquivo não existir, cria vazio com cabeçalho.
+    """
+
+    if not CAMINHO_RESULTADO_PROMPTS.exists():
+        limpar_arquivo_resultado_prompts()
+
+    return FileResponse(
+        path=CAMINHO_RESULTADO_PROMPTS,
+        filename="resultado_prompts.csv",
+        media_type="text/csv",
+    )
+
+
+@app.get("/download/log-prompts")
+def download_log_prompts():
+    """
+    Baixa o JSON de log da extração de prompts.
+    Se o arquivo não existir, cria vazio.
+    """
+
+    if not CAMINHO_LOG_PROMPTS.exists():
+        limpar_arquivo_log_prompts()
+
+    return FileResponse(
+        path=CAMINHO_LOG_PROMPTS,
+        filename="log_extracao_prompts.json",
+        media_type="application/json",
+    )
+
+
+# =====================================================
+# DOWNLOADS — TENANT
+# =====================================================
+
+@app.get("/download/tenant")
+def download_tenant():
+    """
+    Baixa o CSV do resultado da criação de tenant.
+    Se o arquivo não existir, cria vazio com cabeçalho.
+    """
+
+    if not CAMINHO_RESULTADO_TENANT.exists():
+        limpar_arquivo_resultado_tenant()
+
+    return FileResponse(
+        path=CAMINHO_RESULTADO_TENANT,
+        filename="resultado_tenant.csv",
+        media_type="text/csv",
+    )
+
+
+@app.get("/download/log-tenant")
+def download_log_tenant():
+    """
+    Baixa o JSON de log da criação de tenant.
+    Se o arquivo não existir, cria vazio.
+    """
+
+    if not CAMINHO_LOG_TENANT.exists():
+        limpar_arquivo_log_tenant()
+
+    return FileResponse(
+        path=CAMINHO_LOG_TENANT,
+        filename="log_tenant.json",
+        media_type="application/json",
+    )
+
+
+# =====================================================
+# STREAM — CRIAR TENANT
+# =====================================================
+
+@app.get("/executar/criar-tenant-stream")
+def executar_criar_tenant_stream(id_medico: str, nome_medico: str):
+    fila = Queue()
+
+    def enviar_log(evento):
+        fila.put(evento)
+
+    def executar_fluxo():
+        try:
+            # Limpa os arquivos do tenant no início de cada nova execução
+            limpar_arquivo_resultado_tenant()
+            limpar_arquivo_log_tenant()
+
+            fila.put(
+                {
+                    "etapa": "arquivo",
+                    "status": "concluido",
+                    "mensagem": "Arquivos anteriores de tenant e log foram limpos para uma nova execução.",
+                    "dados": {
+                        "arquivo": str(CAMINHO_RESULTADO_TENANT),
+                        "log": str(CAMINHO_LOG_TENANT),
+                    },
+                }
+            )
+
+            resultado = fluxo_criar_tenant(
+                id_medico=id_medico,
+                nome_medico=nome_medico,
+                log=enviar_log,
+            )
+
+            if isinstance(resultado, dict):
+                fila.put(
+                    {
+                        "etapa": "finalizacao",
+                        "status": "concluido" if resultado.get("sucesso") else "erro",
+                        "mensagem": resultado.get("mensagem", "Fluxo finalizado."),
+                        "dados": {
+                            "id_medico": id_medico,
+                            "nome_medico": nome_medico,
+                            "tenant": resultado.get("tenant", ""),
+                            "status": resultado.get("status"),
+                            "arquivo": str(CAMINHO_RESULTADO_TENANT),
+                            "log": str(CAMINHO_LOG_TENANT),
+                        },
+                    }
+                )
+
+            else:
+                fila.put(
+                    {
+                        "etapa": "finalizacao",
+                        "status": "concluido",
+                        "mensagem": "Fluxo Criar Tenant finalizado.",
+                        "dados": {
+                            "arquivo": str(CAMINHO_RESULTADO_TENANT),
+                            "log": str(CAMINHO_LOG_TENANT),
+                        },
+                    }
+                )
+
+        except Exception as erro:
+            fila.put(
+                {
+                    "etapa": "finalizacao",
+                    "status": "erro",
+                    "mensagem": f"Erro ao executar Criar Tenant: {erro}",
+                    "dados": {
+                        "arquivo": str(CAMINHO_RESULTADO_TENANT),
+                        "log": str(CAMINHO_LOG_TENANT),
+                    },
+                }
+            )
+
+        finally:
+            fila.put("__FIM__")
+
+    def gerar_eventos():
+        thread = Thread(target=executar_fluxo, daemon=True)
+        thread.start()
+
+        while True:
+            evento = fila.get()
+
+            if evento == "__FIM__":
+                yield "event: finalizado\ndata: {}\n\n"
+                break
+
+            yield formatar_evento(evento)
+
+    return StreamingResponse(
+        gerar_eventos(),
+        media_type="text/event-stream",
+    )
+
+
+# =====================================================
+# STREAM — EXTRAIR PROMPTS
+# =====================================================
+
+@app.get("/executar/extrair-prompts-stream")
+def executar_extrair_prompts_stream(email_medico: str, limpar_arquivo: bool = False):
+    fila = Queue()
+
+    def enviar_log(evento):
+        fila.put(evento)
+
+    def executar_fluxo():
+        try:
+            # =====================================================
+            # LIMPA OS ARQUIVOS SOMENTE QUANDO O FRONT MANDAR
+            # limpar_arquivo=true
+            # =====================================================
+
+            if limpar_arquivo:
+                limpar_arquivo_resultado_prompts()
+                limpar_arquivo_log_prompts()
+
+                fila.put(
+                    {
+                        "etapa": "arquivo",
+                        "status": "concluido",
+                        "mensagem": "Arquivos anteriores de prompts e log foram limpos para uma nova execução.",
+                        "dados": {
+                            "arquivo": str(CAMINHO_RESULTADO_PROMPTS),
+                            "log": str(CAMINHO_LOG_PROMPTS),
+                        },
+                    }
+                )
+
+            # =====================================================
+            # EXECUTA O FLUXO DE EXTRAÇÃO DO E-MAIL ATUAL
+            # =====================================================
+
+            resultado = fluxo_extrair_prompts(
+                email_medico=email_medico,
+                log=enviar_log,
+            )
+
+            if isinstance(resultado, dict):
+                fila.put(
+                    {
+                        "etapa": "finalizacao",
+                        "status": "concluido" if resultado.get("sucesso") else "erro",
+                        "mensagem": resultado.get("mensagem", "Fluxo finalizado."),
+                        "dados": {
+                            "email_medico": resultado.get("email_medico"),
+                            "quantidade_prompts": resultado.get("quantidade_prompts", 0),
+                            "arquivo": resultado.get("arquivo", str(CAMINHO_RESULTADO_PROMPTS)),
+                            "log": resultado.get("log", str(CAMINHO_LOG_PROMPTS)),
+                            "status": resultado.get("status"),
+                        },
+                    }
+                )
+
+            else:
+                fila.put(
+                    {
+                        "etapa": "finalizacao",
+                        "status": "concluido",
+                        "mensagem": "Fluxo Extrair Prompts finalizado.",
+                        "dados": {
+                            "arquivo": str(CAMINHO_RESULTADO_PROMPTS),
+                            "log": str(CAMINHO_LOG_PROMPTS),
+                        },
+                    }
+                )
+
+        except Exception as erro:
+            fila.put(
+                {
+                    "etapa": "finalizacao",
+                    "status": "erro",
+                    "mensagem": f"Erro ao executar Extrair Prompts: {erro}",
+                    "dados": {
+                        "arquivo": str(CAMINHO_RESULTADO_PROMPTS),
+                        "log": str(CAMINHO_LOG_PROMPTS),
+                    },
+                }
+            )
+
+        finally:
+            fila.put("__FIM__")
+
+    def gerar_eventos():
+        thread = Thread(target=executar_fluxo, daemon=True)
+        thread.start()
+
+        while True:
+            evento = fila.get()
+
+            if evento == "__FIM__":
+                yield "event: finalizado\ndata: {}\n\n"
+                break
+
+            yield formatar_evento(evento)
+
+    return StreamingResponse(
+        gerar_eventos(),
+        media_type="text/event-stream",
+    )

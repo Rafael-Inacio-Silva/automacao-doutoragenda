@@ -1,0 +1,164 @@
+[
+  {
+    "timestamp": "2026-05-01T20:21:22",
+    "fluxo": "extrair_prompts",
+    "etapa": "inicio",
+    "status": "executando",
+    "mensagem": "Iniciando extração de prompts",
+    "dados": {
+      "email_medico": "thomasgm91@gmail.com",
+      "env_carregado": "/Users/rafaelinaciosilva/PycharmProjects/Automacao-DrIA/.env"
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:22",
+    "fluxo": "extrair_prompts",
+    "etapa": "navegador",
+    "status": "executando",
+    "mensagem": "Abrindo navegador",
+    "dados": {
+      "email_medico": "thomasgm91@gmail.com"
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:24",
+    "fluxo": "extrair_prompts",
+    "etapa": "navegador",
+    "status": "concluido",
+    "mensagem": "Navegador iniciado",
+    "dados": {
+      "email_medico": "thomasgm91@gmail.com"
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:24",
+    "fluxo": "extrair_prompts",
+    "etapa": "login",
+    "status": "executando",
+    "mensagem": "Tentando realizar login",
+    "dados": {
+      "email_medico": "thomasgm91@gmail.com"
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:30",
+    "fluxo": "extrair_prompts",
+    "etapa": "login",
+    "status": "concluido",
+    "mensagem": "Login realizado com sucesso",
+    "dados": {
+      "email_medico": "thomasgm91@gmail.com",
+      "link_usado": "https://app.driagenda.com/#/auth/login"
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:30",
+    "fluxo": "extrair_prompts",
+    "etapa": "extracao",
+    "status": "executando",
+    "mensagem": "Extraindo prompts dos assistentes",
+    "dados": {
+      "email_medico": "thomasgm91@gmail.com",
+      "link_usado": "https://app.driagenda.com/#/auth/login"
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:30",
+    "fluxo": "extrair_prompts",
+    "etapa": "extracao",
+    "status": "executando",
+    "mensagem": "2 assistente(s) encontrado(s) para extração",
+    "dados": {
+      "total_assistentes": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:30",
+    "fluxo": "extrair_prompts",
+    "etapa": "extracao",
+    "status": "executando",
+    "mensagem": "Abrindo assistente 1 de 2",
+    "dados": {
+      "assistente_atual": 1,
+      "total_assistentes": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:36",
+    "fluxo": "extrair_prompts",
+    "etapa": "extracao",
+    "status": "concluido",
+    "mensagem": "Prompt do assistente 1 extraído",
+    "dados": {
+      "assistente_atual": 1,
+      "total_assistentes": 2,
+      "tamanho_prompt": 19706
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:36",
+    "fluxo": "extrair_prompts",
+    "etapa": "extracao",
+    "status": "executando",
+    "mensagem": "Abrindo assistente 2 de 2",
+    "dados": {
+      "assistente_atual": 2,
+      "total_assistentes": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:43",
+    "fluxo": "extrair_prompts",
+    "etapa": "extracao",
+    "status": "concluido",
+    "mensagem": "Prompt do assistente 2 extraído",
+    "dados": {
+      "assistente_atual": 2,
+      "total_assistentes": 2,
+      "tamanho_prompt": 2168
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:43",
+    "fluxo": "extrair_prompts",
+    "etapa": "extracao",
+    "status": "concluido",
+    "mensagem": "Prompts extraídos com sucesso",
+    "dados": {
+      "email_medico": "thomasgm91@gmail.com",
+      "link_usado": "https://app.driagenda.com/#/auth/login",
+      "quantidade_prompts": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:43",
+    "fluxo": "extrair_prompts",
+    "etapa": "arquivo",
+    "status": "concluido",
+    "mensagem": "Arquivo CSV atualizado com os prompts extraídos",
+    "dados": {
+      "arquivo": "/Users/rafaelinaciosilva/PycharmProjects/Automacao-DrIA/resultado_prompts.csv"
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:43",
+    "fluxo": "extrair_prompts",
+    "etapa": "finalizacao",
+    "status": "concluido",
+    "mensagem": "Extração finalizada",
+    "dados": {
+      "email_medico": "thomasgm91@gmail.com",
+      "quantidade_prompts": 2
+    }
+  },
+  {
+    "timestamp": "2026-05-01T20:21:43",
+    "fluxo": "extrair_prompts",
+    "etapa": "navegador",
+    "status": "concluido",
+    "mensagem": "Fechando navegador",
+    "dados": {
+      "email_medico": "thomasgm91@gmail.com"
+    }
+  }
+]

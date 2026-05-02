@@ -5,7 +5,102 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3e7d126e-926a-48fb-9649-a59fdb5959c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/acoes/extrator_prompt_zarpon.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/fluxo/extrair_zarpon.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi-0.135.3.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi-0.135.3.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi-0.135.3.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi-0.135.3.dist-info/REQUESTED" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi-0.135.3.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi-0.135.3.dist-info/entry_points.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi-0.135.3.dist-info/licenses/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/_compat/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/_compat/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/_compat/v2.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/_compat/v2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/applications.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/applications.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/dependencies/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/encoders.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/encoders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/responses.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/fastapi/responses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic-2.12.5.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic-2.12.5.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic-2.12.5.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic-2.12.5.dist-info/REQUESTED" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic-2.12.5.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic-2.12.5.dist-info/licenses/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_dataclasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_dataclasses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_discriminated_union.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_discriminated_union.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_fields.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_generate_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_generate_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_generics.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_generics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_known_annotated_metadata.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_known_annotated_metadata.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_model_construction.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_model_construction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_schema_gather.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_schema_gather.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_signature.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_signature.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_typing_extra.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_typing_extra.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_validate_call.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_validate_call.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/_internal/_validators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/dataclasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/dataclasses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/deprecated/class_validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/deprecated/class_validators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/errors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/experimental/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/experimental/pipeline.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/fields.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/fields.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/functional_serializers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/functional_serializers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/functional_validators.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/functional_validators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/json_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/json_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/mypy.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/mypy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/networks.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/networks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/plugin/_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/plugin/_loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/plugin/_schema_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/plugin/_schema_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/root_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/root_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/type_adapter.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/type_adapter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/types.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/generics.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/generics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/typing.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/typing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/v1/version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/validate_call_decorator.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/validate_call_decorator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/version.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/version.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/warnings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic/warnings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core-2.41.5.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core-2.41.5.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core-2.41.5.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core-2.41.5.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core-2.41.5.dist-info/licenses/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core/_pydantic_core.cpython-313-darwin.so" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core/_pydantic_core.cpython-313-darwin.so" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core/_pydantic_core.pyi" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core/_pydantic_core.pyi" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core/core_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/pydantic_core/core_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn-0.44.0.dist-info/INSTALLER" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn-0.44.0.dist-info/METADATA" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn-0.44.0.dist-info/RECORD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn-0.44.0.dist-info/REQUESTED" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn-0.44.0.dist-info/WHEEL" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn-0.44.0.dist-info/entry_points.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn-0.44.0.dist-info/licenses/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/h11_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/protocols/websockets/websockets_sansio_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/protocols/websockets/wsproto_impl.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.venv/lib/python3.13/site-packages/uvicorn/protocols/websockets/wsproto_impl.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/acoes/iniciar_navegador.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/acoes/iniciar_navegador.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/fluxo/criar_agente.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/fluxo/criar_tenant.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/fluxo/criar_tenant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/Sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/Sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/StatusPanel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/components/StatusPanel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/next.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,21 +140,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.criar_tenant.executor": "Run",
-    "Python.iniciar_safari.executor": "Run",
-    "Python.inserir_id_medico.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/rafaelinaciosilva/PycharmProjects/Automacao-DrIA/frontend",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.criar_tenant.executor&quot;: &quot;Run&quot;,
+    &quot;Python.iniciar_safari.executor&quot;: &quot;Run&quot;,
+    &quot;Python.inserir_id_medico.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/rafaelinaciosilva/PycharmProjects/Automacao-DrIA/frontend&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/frontend" />
