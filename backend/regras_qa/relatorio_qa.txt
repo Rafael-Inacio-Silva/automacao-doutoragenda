@@ -1,0 +1,35 @@
+============================================================
+RELATÓRIO DE TESTE QA DO AGENTE
+============================================================
+
+Data da execução: 02/05/2026 02:57:15
+Status geral: executado
+Tenant testado: #93 Dra. Renata Fabiani
+
+Resumo:
+- Total de regras testadas: 1
+- Regras aprovadas: 1
+- Regras com alerta/reprovação: 0
+
+============================================================
+RESULTADO DAS REGRAS
+============================================================
+
+------------------------------------------------------------
+REGRA 1
+------------------------------------------------------------
+Nome da regra: Tenant 100% igual ao esperado
+Status: aprovado
+
+Mensagem:
+Tenant encontrado 100% igual ao esperado.
+
+Esperado:
+#93 Dra. Renata Fabiani
+
+Encontrado:
+#93 Dra. Renata Fabiani
+
+============================================================
+FIM DO RELATÓRIO
+============================================================

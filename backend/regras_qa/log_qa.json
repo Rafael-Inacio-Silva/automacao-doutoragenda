@@ -1,0 +1,107 @@
+[
+    {
+        "timestamp": "2026-05-02T02:57:06",
+        "fluxo": "testar_agente_qa",
+        "etapa": "inicio",
+        "status": "executando",
+        "mensagem": "Iniciando fluxo de teste QA do agente.",
+        "dados": {
+            "tenant_teste": "#93 Dra. Renata Fabiani"
+        }
+    },
+    {
+        "timestamp": "2026-05-02T02:57:06",
+        "fluxo": "testar_agente_qa",
+        "etapa": "login_env",
+        "status": "executado",
+        "mensagem": "Credenciais encontradas no .env.",
+        "dados": {}
+    },
+    {
+        "timestamp": "2026-05-02T02:57:07",
+        "fluxo": "testar_agente_qa",
+        "etapa": "abrir_navegador",
+        "status": "executado",
+        "mensagem": "Navegador iniciado com sucesso.",
+        "dados": {}
+    },
+    {
+        "timestamp": "2026-05-02T02:57:09",
+        "fluxo": "testar_agente_qa",
+        "etapa": "abrir_sistema",
+        "status": "executado",
+        "mensagem": "Sistema DrIA aberto com sucesso.",
+        "dados": {}
+    },
+    {
+        "timestamp": "2026-05-02T02:57:12",
+        "fluxo": "testar_agente_qa",
+        "etapa": "login",
+        "status": "executado",
+        "mensagem": "Login realizado com sucesso.",
+        "dados": {}
+    },
+    {
+        "timestamp": "2026-05-02T02:57:14",
+        "fluxo": "testar_agente_qa",
+        "etapa": "abrir_troca_tenant",
+        "status": "executado",
+        "mensagem": "Área de troca de tenant aberta com sucesso.",
+        "dados": {}
+    },
+    {
+        "timestamp": "2026-05-02T02:57:14",
+        "fluxo": "testar_agente_qa",
+        "etapa": "inserir_id_medico",
+        "status": "executado",
+        "mensagem": "ID do médico inserido no campo de busca.",
+        "dados": {
+            "tenant_teste": "#93 Dra. Renata Fabiani"
+        }
+    },
+    {
+        "timestamp": "2026-05-02T02:57:15",
+        "fluxo": "testar_agente_qa",
+        "etapa": "extrair_tenants",
+        "status": "executado",
+        "mensagem": "Resultado da busca de tenants extraído com sucesso.",
+        "dados": {
+            "resultado_extracao": [
+                "#Dr.IA - IA de testes - Fluxo comercial",
+                "#93 Dra. Renata Fabiani"
+            ]
+        }
+    },
+    {
+        "timestamp": "2026-05-02T02:57:15",
+        "fluxo": "testar_agente_qa",
+        "etapa": "regra_1",
+        "status": "executado",
+        "mensagem": "Regra 1 executada: validação de tenant igual/exato.",
+        "dados": {
+            "regra": "Tenant 100% igual ao esperado",
+            "status": "aprovado",
+            "esperado": "#93 Dra. Renata Fabiani",
+            "encontrado": "#93 Dra. Renata Fabiani",
+            "mensagem": "Tenant encontrado 100% igual ao esperado."
+        }
+    },
+    {
+        "timestamp": "2026-05-02T02:57:15",
+        "fluxo": "testar_agente_qa",
+        "etapa": "relatorio",
+        "status": "executado",
+        "mensagem": "Relatório TXT gerado com sucesso.",
+        "dados": {
+            "relatorio_txt": "/Users/rafaelinaciosilva/PycharmProjects/Automacao-DrIA/backend/regras_qa/relatorio_qa.txt"
+        }
+    },
+    {
+        "timestamp": "2026-05-02T02:57:15",
+        "fluxo": "testar_agente_qa",
+        "etapa": "fim",
+        "status": "executado",
+        "mensagem": "Fluxo de teste QA finalizado.",
+        "dados": {}
+    }
+]

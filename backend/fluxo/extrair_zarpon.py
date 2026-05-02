@@ -5,7 +5,7 @@ from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
 
-from backend.acoes.extrator_prompt_zarpon import (
+from backend.acoes_zarpon.extrator_prompt_zarpon import (
     iniciar_chrome,
     login_no_link,
     extrair_todos_os_prompts,

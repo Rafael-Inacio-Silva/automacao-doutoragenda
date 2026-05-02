@@ -3,19 +3,19 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-def clicar_campo_Selecione_tenant_trocar(driver):
-    print("🖱️ Tentando clicar no combobox do tenant atual...")
+def clicar_opcao_gerenciar_agentes(driver):
+    print("🖱️ Tentando clicar em Gerenciar Agentes...")
 
     elemento = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable(
             (
                 By.XPATH,
-                '//button[@role="combobox" and .//span[contains(normalize-space(), "#")]]'
+                '//div[@role="menuitem" and normalize-space()="Gerenciar Agentes"]'
             )
         )
     )
 
     elemento.click()
 
-    print("✅ Clique realizado com sucesso")
+    print("✅ Clique em Gerenciar Agentes realizado com sucesso")
     return True

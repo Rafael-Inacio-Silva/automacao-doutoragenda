@@ -5,19 +5,19 @@ from pathlib import Path
 from datetime import datetime
 from dotenv import load_dotenv
 
-from backend.acoes.iniciar_navegador import iniciar_chrome
-from backend.acoes.abrir_doutoriagenda import abrir_doutoriagenda
-from backend.acoes.login import preencher_login, preencher_senha, clicar_entrar, esperar_pos_login
-from backend.acoes.clicar_iniciais import clicar_elemento_iniciais
-from backend.acoes.clicar_trocar_tenant import clicar_trocar_tenant
-from backend.acoes.clicar_campo_Selecione_tenant_trocar import clicar_campo_Selecione_tenant_trocar
-from backend.acoes.inserir_id_medico import inserir_id_medico
-from backend.acoes.extrator_tenant_parecido import extrator_tenant_parecido
-from backend.acoes.analisador_tenant import analisar_tenant
-from backend.acoes.fechar_caixa_busca_tenant import fechar_modal_tenant
-from backend.acoes.clicar_gerencia_tenant import clicar_opcao_gerencia_tenant
-from backend.acoes.criar_novo_tenant import clicar_botao_tenant
-from backend.acoes.inserir_nome_novo_tenant import inserir_id_e_nome_medico, clicar_criar_tenant
+from backend.acoes_acesso.iniciar_navegador import iniciar_chrome
+from backend.acoes_acesso.abrir_doutoriagenda import abrir_doutoriagenda
+from backend.acoes_acesso.login import preencher_login, preencher_senha, clicar_entrar, esperar_pos_login
+from backend.acoes_acesso.clicar_iniciais import clicar_elemento_iniciais
+from backend.acoes_menu.clicar_trocar_tenant import clicar_trocar_tenant
+from backend.acoes_menu_trocar_tenant.clicar_campo_selecione_tenant_trocar import clicar_campo_selecione_tenant_trocar
+from backend.acoes_menu_trocar_tenant.inserir_id_medico import inserir_id_medico
+from backend.acoes_menu_trocar_tenant.extrator_tenant_parecido import extrator_tenant_parecido
+from backend.acoes_tenant.analisador_tenant import analisar_tenant
+from backend.acoes_tenant.fechar_caixa_busca_tenant import fechar_modal_tenant
+from backend.acoes_menu.clicar_gerenciar_tenant import clicar_opcao_gerencia_tenant
+from backend.acoes_menu_gerenciar_tenant.criar_novo_tenant import clicar_botao_tenant
+from backend.acoes_menu_gerenciar_tenant.inserir_nome_novo_tenant import inserir_id_e_nome_medico, clicar_criar_tenant
 
 
 CAMINHO_ENV = Path(__file__).resolve().parents[1] / ".env"
@@ -152,7 +152,7 @@ def fluxo_criar_tenant(id_medico: str, nome_medico: str, log=None):
 
         clicar_elemento_iniciais(driver)
         clicar_trocar_tenant(driver)
-        clicar_campo_Selecione_tenant_trocar(driver)
+        clicar_campo_selecione_tenant_trocar(driver)
         inserir_id_medico(driver, id_medico)
 
         resultado = extrator_tenant_parecido(driver)
