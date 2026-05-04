@@ -1,6 +1,6 @@
 [
   {
-    "timestamp": "2026-05-01T20:31:11",
+    "timestamp": "2026-05-04T02:19:50",
     "fluxo": "criar_tenant",
     "etapa": "inicio",
     "status": "executando",
@@ -8,7 +8,7 @@
     "dados": {}
   },
   {
-    "timestamp": "2026-05-01T20:31:11",
+    "timestamp": "2026-05-04T02:19:50",
     "fluxo": "criar_tenant",
     "etapa": "navegador",
     "status": "executando",
@@ -16,7 +16,7 @@
     "dados": {}
   },
   {
-    "timestamp": "2026-05-01T20:31:12",
+    "timestamp": "2026-05-04T02:19:52",
     "fluxo": "criar_tenant",
     "etapa": "navegador",
     "status": "concluido",
@@ -24,7 +24,7 @@
     "dados": {}
   },
   {
-    "timestamp": "2026-05-01T20:31:12",
+    "timestamp": "2026-05-04T02:19:52",
     "fluxo": "criar_tenant",
     "etapa": "acesso",
     "status": "executando",
@@ -32,7 +32,7 @@
     "dados": {}
   },
   {
-    "timestamp": "2026-05-01T20:31:14",
+    "timestamp": "2026-05-04T02:19:56",
     "fluxo": "criar_tenant",
     "etapa": "acesso",
     "status": "concluido",
@@ -40,7 +40,7 @@
     "dados": {}
   },
   {
-    "timestamp": "2026-05-01T20:31:14",
+    "timestamp": "2026-05-04T02:19:56",
     "fluxo": "criar_tenant",
     "etapa": "login",
     "status": "executando",
@@ -48,7 +48,7 @@
     "dados": {}
   },
   {
-    "timestamp": "2026-05-01T20:31:17",
+    "timestamp": "2026-05-04T02:19:59",
     "fluxo": "criar_tenant",
     "etapa": "login",
     "status": "concluido",
@@ -56,27 +56,52 @@
     "dados": {}
   },
   {
-    "timestamp": "2026-05-01T20:31:17",
+    "timestamp": "2026-05-04T02:19:59",
     "fluxo": "criar_tenant",
     "etapa": "busca_tenant",
     "status": "executando",
     "mensagem": "Buscando tenant informado",
     "dados": {
-      "id_medico": "#93"
+      "id_medico": "#777"
     }
   },
   {
-    "timestamp": "2026-05-01T20:31:20",
+    "timestamp": "2026-05-04T02:20:01",
     "fluxo": "criar_tenant",
     "etapa": "busca_tenant",
-    "status": "alerta",
-    "mensagem": "Tenant já existe",
+    "status": "concluido",
+    "mensagem": "Tenant não encontrado",
+    "dados": {}
+  },
+  {
+    "timestamp": "2026-05-04T02:20:01",
+    "fluxo": "criar_tenant",
+    "etapa": "criacao_tenant",
+    "status": "executando",
+    "mensagem": "Criando novo tenant",
     "dados": {
-      "tenant_encontrado": "#93 Dra. Renata Fabiani"
+      "id_medico": "#777",
+      "nome_medico": "Rafael"
     }
   },
   {
-    "timestamp": "2026-05-01T20:31:20",
+    "timestamp": "2026-05-04T02:20:03",
+    "fluxo": "criar_tenant",
+    "etapa": "criacao_tenant",
+    "status": "concluido",
+    "mensagem": "Tenant criado com sucesso",
+    "dados": {}
+  },
+  {
+    "timestamp": "2026-05-04T02:20:03",
+    "fluxo": "criar_tenant",
+    "etapa": "finalizacao",
+    "status": "concluido",
+    "mensagem": "Automação finalizada",
+    "dados": {}
+  },
+  {
+    "timestamp": "2026-05-04T02:20:03",
     "fluxo": "criar_tenant",
     "etapa": "navegador",
     "status": "concluido",

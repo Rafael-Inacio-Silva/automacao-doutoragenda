@@ -1,0 +1,36 @@
+RELATÓRIO DE TESTE QA — LOTE
+================================================================================
+Data de execução: 2026-05-04T03:09:09
+Quantidade de tenants testados: 1
+================================================================================
+
+1. TENANT: #586 - Dr. Raphael Palomares Jacobs
+--------------------------------------------------------------------------------
+Status geral: reprovado
+Mensagem: Fluxo QA executado. Regra 1, Regra 2, Regra 3 e Regra 4 foram validadas.
+
+Regra: Regra 1 — Tenant 100% igual ao esperado
+Status: aprovado
+Esperado: #586 - Dr. Raphael Palomares Jacobs
+Encontrado: #586 - Dr. Raphael Palomares Jacobs
+Mensagem: Tenant encontrado é 100% igual ao tenant esperado.
+
+Regra: Regra 2 — Sumarização de Contexto deve estar false
+Status: aprovado
+Esperado: false
+Encontrado: false
+Mensagem: Sumarização de Contexto está corretamente desativada.
+
+Regra: Regra 3 — Estágios obrigatórios da conversa
+Status: aprovado
+Esperado: {'1': 'Conexão', '2': 'Qualificação', '3': 'Agendamento', '4': 'Confirmação'}
+Encontrado: [{'numero': '1', 'esperado': 'Conexão', 'encontrado': 'Conexão', 'status': 'aprovado'}, {'numero': '2', 'esperado': 'Qualificação', 'encontrado': 'Qualificação', 'status': 'aprovado'}, {'numero': '3', 'esperado': 'Agendamento', 'encontrado': 'Agendamento', 'status': 'aprovado'}, {'numero': '4', 'esperado': 'Confirmação', 'encontrado': 'Confirmação', 'status': 'aprovado'}]
+Mensagem: Todos os estágios obrigatórios foram encontrados corretamente.
+
+Regra: Regra 4 — Validação LLM do Estágio 3 Agendamento
+Status: reprovado
+Esperado: {'ferramenta': 'buscar_proximos_horarios', 'parametros_obrigatorios': ['tipo_agendamento_id', 'quantidade_dias: 90'], 'fluxo_obrigatorio': 'consultar agenda → aguardar retorno → oferecer horários', 'inicio_obrigatorio': ['INFORMAÇÕES SOBRE AGENDAMENTO:', '{{tipos_agendamento_context}}']}
+Encontrado: {'numero': '3', 'nome': 'Agendamento', 'id_instrucao': 'stage-instruction-2', 'inicio_correto_codigo': True, 'instrucao_preview': 'INFORMAÇÕES SOBRE AGENDAMENTO:\n{{tipos_agendamento_context}}\n \nRegras:\n- Faça UMA pergunta por vez.\n- NUNCA inventar horários.\n \n⚠️ RESTRIÇÃO ABSOLUTA — O QUE PODE SER AGENDADO:\nA Júlia agenda EXCLUSIVAMENTE:\n- Consultas oftalmológicas (PRIMEIRA CONSULTA apenas)\n- Exames com pedido médico\n \nA Júlia NÃO agenda:\n- Retornos ou consultas de retorno\n- Procedimentos cirúrgicos, cirurgias ou qualquer intervenção\n\nSe o paciente solicitar agendamento de RETORNO, cirurgia ou procedimento → NÃO prossiga.\nR... [texto cortado]'}
+Mensagem: Não iniciou exatamente com a linha obrigatória 'INFORMAÇÕES SOBRE AGENDAMENTO: {{tipos_agendamento_dinamico}}'. O prompt usa {{tipos_agendamento_context}} em vez de {{tipos_agendamento_dinamico}}, violando o formato exigido.
+
+================================================================================

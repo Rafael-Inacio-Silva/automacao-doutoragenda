@@ -1,83 +1,114 @@
 [
     {
-        "timestamp": "2026-05-04T01:52:40",
+        "timestamp": "2026-05-04T03:08:38",
         "fluxo": "testar_agente_qa",
         "etapa": "inicio",
         "status": "executando",
         "mensagem": "Iniciando fluxo de teste QA do agente.",
         "dados": {
-            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs"
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
         }
     },
     {
-        "timestamp": "2026-05-04T01:52:40",
+        "timestamp": "2026-05-04T03:08:38",
         "fluxo": "testar_agente_qa",
         "etapa": "login_env",
         "status": "executado",
         "mensagem": "Credenciais encontradas no .env.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1,
+            "env_carregado": "/Users/rafaelinaciosilva/PycharmProjects/Automacao-DrIA/backend/.env"
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:41",
+        "timestamp": "2026-05-04T03:08:39",
         "fluxo": "testar_agente_qa",
         "etapa": "abrir_navegador",
         "status": "executado",
         "mensagem": "Navegador iniciado com sucesso.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:44",
+        "timestamp": "2026-05-04T03:08:41",
         "fluxo": "testar_agente_qa",
         "etapa": "abrir_sistema",
         "status": "executado",
         "mensagem": "Sistema DrIA aberto com sucesso.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:47",
+        "timestamp": "2026-05-04T03:08:44",
         "fluxo": "testar_agente_qa",
         "etapa": "login",
         "status": "executado",
         "mensagem": "Login realizado com sucesso.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:49",
+        "timestamp": "2026-05-04T03:08:46",
         "fluxo": "testar_agente_qa",
         "etapa": "abrir_troca_tenant",
         "status": "executado",
         "mensagem": "Área de troca de tenant aberta com sucesso.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:49",
+        "timestamp": "2026-05-04T03:08:47",
         "fluxo": "testar_agente_qa",
         "etapa": "inserir_id_medico",
         "status": "executado",
         "mensagem": "ID do médico inserido no campo de busca.",
         "dados": {
-            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs"
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
         }
     },
     {
-        "timestamp": "2026-05-04T01:52:49",
+        "timestamp": "2026-05-04T03:08:47",
         "fluxo": "testar_agente_qa",
         "etapa": "extrair_tenants",
         "status": "executado",
         "mensagem": "Resultado da busca de tenants extraído com sucesso.",
         "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1,
             "resultado_extracao": [
                 "#586 - Dr. Raphael Palomares Jacobs"
             ]
         }
     },
     {
-        "timestamp": "2026-05-04T01:52:49",
+        "timestamp": "2026-05-04T03:08:47",
         "fluxo": "testar_agente_qa",
         "etapa": "regra_1",
         "status": "executado",
         "mensagem": "Regra 1 executada: validação de tenant igual/exato.",
         "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1,
             "regra": "Regra 1 — Tenant 100% igual ao esperado",
             "status": "aprovado",
             "esperado": "#586 - Dr. Raphael Palomares Jacobs",
@@ -86,62 +117,87 @@
         }
     },
     {
-        "timestamp": "2026-05-04T01:52:49",
+        "timestamp": "2026-05-04T03:08:47",
         "fluxo": "testar_agente_qa",
         "etapa": "regra_1_aprovada",
         "status": "executado",
         "mensagem": "Regra 1 aprovada. Prosseguindo para troca de tenant.",
         "dados": {
-            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs"
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
         }
     },
     {
-        "timestamp": "2026-05-04T01:52:49",
+        "timestamp": "2026-05-04T03:08:47",
         "fluxo": "testar_agente_qa",
         "etapa": "clicar_tenant",
         "status": "executado",
         "mensagem": "Tenant aprovado selecionado com sucesso.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:49",
+        "timestamp": "2026-05-04T03:08:47",
         "fluxo": "testar_agente_qa",
         "etapa": "clicar_botao_trocar",
         "status": "executado",
         "mensagem": "Botão Trocar clicado com sucesso.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:50",
+        "timestamp": "2026-05-04T03:08:47",
         "fluxo": "testar_agente_qa",
         "etapa": "clicar_iniciais_pos_troca",
         "status": "executado",
         "mensagem": "Menu das iniciais aberto com sucesso após troca de tenant.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:50",
+        "timestamp": "2026-05-04T03:08:47",
         "fluxo": "testar_agente_qa",
         "etapa": "clicar_gerenciar_agentes",
         "status": "executado",
         "mensagem": "Gerenciar Agentes acessado com sucesso.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:52",
+        "timestamp": "2026-05-04T03:08:51",
         "fluxo": "testar_agente_qa",
         "etapa": "clicar_visualizar_agente",
         "status": "executado",
         "mensagem": "Botão Visualizar Agente clicado com sucesso.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:54",
+        "timestamp": "2026-05-04T03:08:53",
         "fluxo": "testar_agente_qa",
         "etapa": "extrair_sumarizacao_contexto",
         "status": "executado",
         "mensagem": "Extração do campo Sumarização de Contexto executada.",
         "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1,
             "status_extracao": "encontrado",
             "campo": "Sumarização de Contexto",
             "atributo": "aria-checked",
@@ -150,12 +206,15 @@
         }
     },
     {
-        "timestamp": "2026-05-04T01:52:54",
+        "timestamp": "2026-05-04T03:08:53",
         "fluxo": "testar_agente_qa",
         "etapa": "regra_2",
         "status": "executado",
         "mensagem": "Regra 2 executada: Sumarização de Contexto deve estar false.",
         "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1,
             "regra": "Regra 2 — Sumarização de Contexto deve estar false",
             "status": "aprovado",
             "esperado": "false",
@@ -171,20 +230,27 @@
         }
     },
     {
-        "timestamp": "2026-05-04T01:52:54",
+        "timestamp": "2026-05-04T03:08:53",
         "fluxo": "testar_agente_qa",
         "etapa": "clicar_aba_conversa",
         "status": "executado",
         "mensagem": "Aba Conversa clicada com sucesso.",
-        "dados": {}
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     },
     {
-        "timestamp": "2026-05-04T01:52:56",
+        "timestamp": "2026-05-04T03:08:54",
         "fluxo": "testar_agente_qa",
         "etapa": "extrair_estagios_conversa",
         "status": "executado",
         "mensagem": "Extração dos estágios da aba Conversa executada.",
         "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1,
             "status": "executado",
             "quantidade": 4,
             "estagios": [
@@ -229,12 +295,15 @@
         }
     },
     {
-        "timestamp": "2026-05-04T01:52:56",
+        "timestamp": "2026-05-04T03:08:54",
         "fluxo": "testar_agente_qa",
         "etapa": "regra_3",
         "status": "executado",
         "mensagem": "Regra 3 executada: validação dos estágios obrigatórios.",
         "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1,
             "regra": "Regra 3 — Estágios obrigatórios da conversa",
             "status": "aprovado",
             "esperado": {
@@ -342,12 +411,15 @@
         }
     },
     {
-        "timestamp": "2026-05-04T01:53:11",
+        "timestamp": "2026-05-04T03:09:09",
         "fluxo": "testar_agente_qa",
         "etapa": "regra_4",
         "status": "executado",
         "mensagem": "Regra 4 executada: validação LLM do Estágio 3 Agendamento.",
         "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1,
             "regra": "Regra 4 — Validação LLM do Estágio 3 Agendamento",
             "status": "reprovado",
             "esperado": {
@@ -369,7 +441,7 @@
                 "inicio_correto_codigo": true,
                 "instrucao_preview": "INFORMAÇÕES SOBRE AGENDAMENTO:\n{{tipos_agendamento_context}}\n \nRegras:\n- Faça UMA pergunta por vez.\n- NUNCA inventar horários.\n \n⚠️ RESTRIÇÃO ABSOLUTA — O QUE PODE SER AGENDADO:\nA Júlia agenda EXCLUSIVAMENTE:\n- Consultas oftalmológicas (PRIMEIRA CONSULTA apenas)\n- Exames com pedido médico\n \nA Júlia NÃO agenda:\n- Retornos ou consultas de retorno\n- Procedimentos cirúrgicos, cirurgias ou qualquer intervenção\n\nSe o paciente solicitar agendamento de RETORNO, cirurgia ou procedimento → NÃO prossiga.\nR... [texto cortado]"
             },
-            "mensagem": "FALTA: o prompt não inicia com a linha obrigatória 'AGENDAMENTO:KKKKKKK'. Sem esse início explícito, o Estágio 3 não satisfaz o critério de início exigido. Os demais elementos obrigatórios (consulta da agenda antes de oferecer horários usando buscar_proximos_horarios com parâmetros, fluxo consultar → aguardar retorno → oferecer, e demais regras descritas) estão presentes, mas o início ausente impede aprovação.",
+            "mensagem": "Não iniciou exatamente com a linha obrigatória 'INFORMAÇÕES SOBRE AGENDAMENTO: {{tipos_agendamento_dinamico}}'. O prompt usa {{tipos_agendamento_context}} em vez de {{tipos_agendamento_dinamico}}, violando o formato exigido.",
             "criterios": {
                 "proibe_inventar_horarios": true,
                 "obriga_buscar_proximos_horarios_antes": true,
@@ -379,12 +451,12 @@
                 "inicio_correto": true
             },
             "problemas_encontrados": [
-                "Ausência da linha inicial obrigatória 'AGENDAMENTO:KKKKKKK' no início do prompt.",
-                "Apesar da presença de instruções detalhadas para buscar_proximos_horarios e fluxo subsequente, a falta do prefixo inicial viola o critério de início exigido."
+                "Início do prompt não começa exatamente com a linha obrigatória: 'INFORMAÇÕES SOBRE AGENDAMENTO: {{tipos_agendamento_dinamico}}'.",
+                "Uso de {{tipos_agendamento_context}} no início em vez de {{tipos_agendamento_dinamico}}."
             ],
             "resposta_llm": {
                 "status": "reprovado",
-                "mensagem": "FALTA: o prompt não inicia com a linha obrigatória 'AGENDAMENTO:KKKKKKK'. Sem esse início explícito, o Estágio 3 não satisfaz o critério de início exigido. Os demais elementos obrigatórios (consulta da agenda antes de oferecer horários usando buscar_proximos_horarios com parâmetros, fluxo consultar → aguardar retorno → oferecer, e demais regras descritas) estão presentes, mas o início ausente impede aprovação.",
+                "mensagem": "Não iniciou exatamente com a linha obrigatória 'INFORMAÇÕES SOBRE AGENDAMENTO: {{tipos_agendamento_dinamico}}'. O prompt usa {{tipos_agendamento_context}} em vez de {{tipos_agendamento_dinamico}}, violando o formato exigido.",
                 "criterios": {
                     "proibe_inventar_horarios": true,
                     "obriga_buscar_proximos_horarios_antes": true,
@@ -394,8 +466,8 @@
                     "inicio_correto": true
                 },
                 "problemas_encontrados": [
-                    "Ausência da linha inicial obrigatória 'AGENDAMENTO:KKKKKKK' no início do prompt.",
-                    "Apesar da presença de instruções detalhadas para buscar_proximos_horarios e fluxo subsequente, a falta do prefixo inicial viola o critério de início exigido."
+                    "Início do prompt não começa exatamente com a linha obrigatória: 'INFORMAÇÕES SOBRE AGENDAMENTO: {{tipos_agendamento_dinamico}}'.",
+                    "Uso de {{tipos_agendamento_context}} no início em vez de {{tipos_agendamento_dinamico}}."
                 ]
             },
             "modelo_llm": "gpt-5-nano",
@@ -403,21 +475,28 @@
         }
     },
     {
-        "timestamp": "2026-05-04T01:53:11",
+        "timestamp": "2026-05-04T03:09:09",
         "fluxo": "testar_agente_qa",
         "etapa": "relatorio",
         "status": "executado",
-        "mensagem": "Relatório TXT gerado com sucesso com as regras executadas.",
+        "mensagem": "Relatório TXT individual gerado com sucesso.",
         "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1,
             "relatorio_txt": "/Users/rafaelinaciosilva/PycharmProjects/Automacao-DrIA/backend/regras_qa/relatorio_qa.txt"
         }
     },
     {
-        "timestamp": "2026-05-04T01:53:11",
+        "timestamp": "2026-05-04T03:09:09",
         "fluxo": "testar_agente_qa",
         "etapa": "fim",
         "status": "executado",
-        "mensagem": "Fluxo de teste QA finalizado após execução da Regra 1, Regra 2 e Regra 3.",
-        "dados": {}
+        "mensagem": "Fluxo de teste QA finalizado após execução das regras obrigatórias.",
+        "dados": {
+            "tenant_teste": "#586 - Dr. Raphael Palomares Jacobs",
+            "indice": 1,
+            "total": 1
+        }
     }
 ]

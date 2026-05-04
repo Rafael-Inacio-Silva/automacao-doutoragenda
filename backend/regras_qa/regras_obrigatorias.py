@@ -626,7 +626,7 @@ O prompt DEVE conter instruções EXPLÍCITAS que:
 5. INICIEM com exatamente:
 
 INFORMAÇÕES SOBRE AGENDAMENTO:
-{{tipos_agendamento_context}}
+{{tipos_agendamento_dinamico}}
 
 CRITÉRIOS DE APROVAÇÃO:
 
@@ -637,7 +637,7 @@ APROVADO se contém:
 - Fluxo claro: consultar → aguardar retorno → oferecer
 - Início correto com:
   INFORMAÇÕES SOBRE AGENDAMENTO:
-  {{tipos_agendamento_context}}
+  {{tipos_agendamento_dinamico}}
 
 REPROVADO se:
 - Não menciona a ferramenta buscar_proximos_horarios
@@ -646,7 +646,7 @@ REPROVADO se:
 - Faltam os parâmetros obrigatórios
 - Não inicia com:
   INFORMAÇÕES SOBRE AGENDAMENTO:
-  {{tipos_agendamento_context}}
+  {{tipos_agendamento_dinamico}}
 
 Responda SOMENTE em JSON válido, sem markdown, no formato:
 

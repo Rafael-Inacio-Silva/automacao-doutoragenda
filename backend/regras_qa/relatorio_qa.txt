@@ -2,7 +2,7 @@
               RELATÓRIO DE TESTE QA DO AGENTE
 ============================================================
 
-Data da execução: 04/05/2026 01:53:11
+Data da execução: 04/05/2026 03:09:09
 Status geral: executado
 Tenant testado: #586 - Dr. Raphael Palomares Jacobs
 
@@ -67,7 +67,7 @@ Nome da regra: Regra 4 — Validação LLM do Estágio 3 Agendamento
 Status: reprovado
 
 Mensagem:
-FALTA: o prompt não inicia com a linha obrigatória 'AGENDAMENTO:KKKKKKK'. Sem esse início explícito, o Estágio 3 não satisfaz o critério de início exigido. Os demais elementos obrigatórios (consulta da agenda antes de oferecer horários usando buscar_proximos_horarios com parâmetros, fluxo consultar → aguardar retorno → oferecer, e demais regras descritas) estão presentes, mas o início ausente impede aprovação.
+Não iniciou exatamente com a linha obrigatória 'INFORMAÇÕES SOBRE AGENDAMENTO: {{tipos_agendamento_dinamico}}'. O prompt usa {{tipos_agendamento_context}} em vez de {{tipos_agendamento_dinamico}}, violando o formato exigido.
 
 Esperado:
 {'ferramenta': 'buscar_proximos_horarios', 'parametros_obrigatorios': ['tipo_agendamento_id', 'quantidade_dias: 90'], 'fluxo_obrigatorio': 'consultar agenda → aguardar retorno → oferecer horários', 'inicio_obrigatorio': ['INFORMAÇÕES SOBRE AGENDAMENTO:', '{{tipos_agendamento_context}}']}
