@@ -8,21 +8,31 @@ type ChecklistItem = {
 
 type ResultadoPrompt = {
   email: string;
-  status:
-    | "pendente"
-    | "executando"
-    | "com_prompt"
-    | "nao_logou"
-    | "sem_prompt"
-    | "erro";
+  status: "pendente" | "executando" | "executado";
   quantidadePrompts: number;
   mensagem: string;
+};
+
+type StatusRegraQA = "pendente" | "executando" | "aprovado" | "reprovado" | "erro";
+
+type RegraQA = {
+  titulo: string;
+  status: StatusRegraQA;
+  mensagem?: string;
+};
+
+type ResultadoQA = {
+  tenant: string;
+  status: "pendente" | "executando" | "aprovado" | "reprovado" | "erro";
+  regras: RegraQA[];
+  mensagem?: string;
 };
 
 type StatusPanelProps = {
   itens: ChecklistItem[];
   resultadosPrompts?: ResultadoPrompt[];
-  tipo?: "tenant" | "prompts";
+  resultadosQA?: ResultadoQA[];
+  tipo?: "tenant" | "prompts" | "qa";
 };
 
 const statusConfig = {
@@ -65,9 +75,26 @@ function classeStatusPrompt(status: ResultadoPrompt["status"]) {
   return "text-slate-400";
 }
 
+function textoStatusQA(status: ResultadoQA["status"] | RegraQA["status"]) {
+  if (status === "aprovado") return "Aprovado";
+  if (status === "reprovado") return "Reprovado";
+  if (status === "erro") return "Erro";
+  if (status === "executando") return "Executando";
+  return "Pendente";
+}
+
+function classeStatusQA(status: ResultadoQA["status"] | RegraQA["status"]) {
+  if (status === "aprovado") return "text-emerald-400";
+  if (status === "reprovado") return "text-red-400";
+  if (status === "erro") return "text-red-400";
+  if (status === "executando") return "text-blue-400";
+  return "text-slate-400";
+}
+
 export default function StatusPanel({
   itens,
   resultadosPrompts = [],
+  resultadosQA = [],
   tipo = "tenant",
 }: StatusPanelProps) {
   const etapaFinalizacao = itens.find((item) => item.etapa === "finalizacao");
@@ -82,12 +109,22 @@ export default function StatusPanel({
       return;
     }
 
+    if (tipo === "qa") {
+      window.open("http://127.0.0.1:8000/download/qa", "_blank");
+      return;
+    }
+
     window.open("http://127.0.0.1:8000/download/prompts", "_blank");
   }
 
   function baixarArquivoLog() {
     if (tipo === "tenant") {
       window.open("http://127.0.0.1:8000/download/log-tenant", "_blank");
+      return;
+    }
+
+    if (tipo === "qa") {
+      window.open("http://127.0.0.1:8000/download/log-qa", "_blank");
       return;
     }
 
@@ -108,7 +145,13 @@ export default function StatusPanel({
                 type="button"
                 onClick={baixarArquivoResultado}
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 text-slate-200 transition hover:bg-slate-800 hover:text-white"
-                title={tipo === "tenant" ? "Baixar resultado do tenant" : "Baixar arquivo de prompts"}
+                title={
+                  tipo === "qa"
+                    ? "Baixar relatório QA"
+                    : tipo === "tenant"
+                    ? "Baixar resultado do tenant"
+                    : "Baixar arquivo de prompts"
+                }
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +177,13 @@ export default function StatusPanel({
                 type="button"
                 onClick={baixarArquivoLog}
                 className="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-700 bg-slate-900 text-slate-200 transition hover:bg-slate-800 hover:text-white"
-                title={tipo === "tenant" ? "Baixar log do tenant" : "Baixar log da extração"}
+                title={
+                  tipo === "qa"
+                    ? "Baixar log QA"
+                    : tipo === "tenant"
+                    ? "Baixar log do tenant"
+                    : "Baixar log da extração"
+                }
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -159,8 +208,65 @@ export default function StatusPanel({
           )}
         </div>
 
-        <div className="mt-5 space-y-3">
-          {tipo === "prompts" ? (
+        <div className="mt-5 space-y-4">
+          {tipo === "qa" ? (
+            resultadosQA.length > 0 ? (
+              resultadosQA.map((resultado) => (
+                <div
+                  key={resultado.tenant}
+                  className="rounded-xl border border-slate-800 bg-black/20 p-5"
+                >
+                  <div className="mb-5">
+                    <p className="text-base font-semibold text-slate-100">
+                      {resultado.tenant}
+                    </p>
+
+                    <p className="mt-1 text-sm text-slate-400">
+                      Status:{" "}
+                      <span
+                        className={`font-semibold ${classeStatusQA(
+                          resultado.status
+                        )}`}
+                      >
+                        {textoStatusQA(resultado.status)}
+                      </span>
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    {resultado.regras.map((regra) => (
+                      <div
+                        key={regra.titulo}
+                        className="rounded-lg border border-slate-800 bg-slate-950/60 px-4 py-3"
+                      >
+                        <p className="text-sm font-medium text-slate-200">
+                          {regra.titulo}
+                        </p>
+
+                        <p
+                          className={`mt-1 text-sm font-semibold ${classeStatusQA(
+                            regra.status
+                          )}`}
+                        >
+                          {textoStatusQA(regra.status)}
+                        </p>
+
+                        {regra.mensagem && (
+                          <p className="mt-2 text-xs text-slate-500">
+                            {regra.mensagem}
+                          </p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))
+            ) : (
+              <div className="rounded-lg border border-slate-800 bg-black/20 px-4 py-3 text-slate-400">
+                Nenhum teste QA executado ainda.
+              </div>
+            )
+          ) : tipo === "prompts" ? (
             resultadosPrompts.length > 0 ? (
               <>
                 <div className="grid grid-cols-1 gap-3 px-4 text-left text-xs font-semibold uppercase tracking-wide text-slate-500 md:grid-cols-3">
@@ -170,28 +276,26 @@ export default function StatusPanel({
                 </div>
 
                 {resultadosPrompts.map((item) => (
-                <div
-                  key={item.email}
-                  className="grid grid-cols-1 gap-3 rounded-lg border border-slate-800 bg-black/20 px-4 py-3 text-left md:grid-cols-3 md:items-start"
-                >
-                  <span className="text-slate-200">{item.email}</span>
-
-                  <span
-                    className={`font-medium ${classeStatusPrompt(
-                      item.status
-                    )}`}
+                  <div
+                    key={item.email}
+                    className="grid grid-cols-1 gap-3 rounded-lg border border-slate-800 bg-black/20 px-4 py-3 text-left md:grid-cols-3 md:items-start"
                   >
-                    {textoStatusPrompt(item.status)}
-                  </span>
+                    <span className="text-slate-200">{item.email}</span>
 
-                  <span className="text-slate-400">{item.mensagem}</span>
-                </div>
-              ))}
+                    <span
+                      className={`font-medium ${classeStatusPrompt(
+                        item.status
+                      )}`}
+                    >
+                      {textoStatusPrompt(item.status)}
+                    </span>
+
+                    <span className="text-slate-400">{item.mensagem}</span>
+                  </div>
+                ))}
               </>
             ) : (
-              <div className="rounded-lg border border-slate-800 bg-black/20 px-4 py-3 text-slate-400">
-
-              </div>
+              <div className="rounded-lg border border-slate-800 bg-black/20 px-4 py-3 text-slate-400"></div>
             )
           ) : (
             itens.map((item) => {

@@ -5,6 +5,7 @@ import Button from "./button";
 
 type SidebarProps = {
   carregando: string;
+  executarTestarAgente: () => void;
   executarCriarTenant: () => void;
   executarCriarAgente: () => void;
   executarZarpon: () => void;
@@ -12,6 +13,7 @@ type SidebarProps = {
 
 export default function Sidebar({
   carregando,
+  executarTestarAgente,
   executarCriarTenant,
   executarCriarAgente,
   executarZarpon,
@@ -35,8 +37,8 @@ export default function Sidebar({
 
       <nav className="mt-auto w-full rounded-xl border border-slate-700/50 bg-slate-800/50">
         <Button
-          quandoClica={executarZarpon}
-          ativo={carregando === "zarpon"}
+          quandoClica={executarTestarAgente}
+          ativo={carregando === "qa"}
           disabled={carregando !== ""}
         >
           <div className="flex items-center justify-start gap-3">
@@ -64,7 +66,7 @@ export default function Sidebar({
               <path d="M9 7.13V6a3 3 0 1 1 6 0v1.13"/>
             </svg>
 
-            <span>Testar Agente</span>
+            <span>{carregando === "qa" ? "Executando..." : "Testar Agente"}</span>
           </div>
         </Button>
 
