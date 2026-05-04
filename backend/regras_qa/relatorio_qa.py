@@ -105,7 +105,7 @@ def gerar_relatorio_txt(status_geral, id_medico_teste, resultados_regras):
 
     conteudo = f"""
 ============================================================
-RELATÓRIO DE TESTE QA DO AGENTE
+              RELATÓRIO DE TESTE QA DO AGENTE
 ============================================================
 
 Data da execução: {agora}
@@ -118,7 +118,7 @@ Resumo:
 - Regras com alerta/reprovação: {total_reprovadas}
 
 ============================================================
-RESULTADO DAS REGRAS
+                   RESULTADO DAS REGRAS
 ============================================================
 """
 
@@ -127,7 +127,7 @@ RESULTADO DAS REGRAS
 
     conteudo += """
 ============================================================
-FIM DO RELATÓRIO
+                     FIM DO RELATÓRIO
 ============================================================
 """
 

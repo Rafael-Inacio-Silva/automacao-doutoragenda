@@ -5,16 +5,26 @@ from selenium.common.exceptions import TimeoutException
 
 
 def extrator_tenant_parecido(driver):
-    print("🔎 Extraindo resultados de tenant...")
+    print("🔎 Extraindo apenas tenants disponíveis...")
 
     try:
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'Tenants Disponíveis')]"))
+        wait = WebDriverWait(driver, 10)
+
+        titulo_tenants_disponiveis = wait.until(
+            EC.presence_of_element_located(
+                (
+                    By.XPATH,
+                    "//*[normalize-space(text())='Tenants Disponíveis']"
+                )
+            )
         )
+
+        print("✅ Área 'Tenants Disponíveis' localizada.")
 
         elementos_nao_encontrado = driver.find_elements(
             By.XPATH,
-            "//*[contains(text(), 'Nenhum tenant encontrado')]"
+            "//*[normalize-space(text())='Tenants Disponíveis']"
+            "/following::*[contains(normalize-space(text()), 'Nenhum tenant encontrado')]"
         )
 
         if elementos_nao_encontrado:
@@ -23,27 +33,37 @@ def extrator_tenant_parecido(driver):
 
         elementos = driver.find_elements(
             By.XPATH,
-            "//*[starts-with(normalize-space(text()), '#')]"
+            "//*[normalize-space(text())='Tenants Disponíveis']"
+            "/following::*[starts-with(normalize-space(text()), '#')]"
         )
 
         resultados = []
 
         for elemento in elementos:
-            texto = elemento.text.strip().split("\n")[0]
-            if texto and texto not in resultados:
-                resultados.append(texto)
-                print(f"✅ Resultado encontrado: {texto}")
+            texto = elemento.text.strip()
+
+            if not texto:
+                continue
+
+            primeira_linha = texto.split("\n")[0].strip()
+
+            if not primeira_linha.startswith("#"):
+                continue
+
+            if primeira_linha not in resultados:
+                resultados.append(primeira_linha)
+                print(f"✅ Tenant disponível encontrado: {primeira_linha}")
 
         if not resultados:
-            print("⚠️ Nenhum resultado extraído")
+            print("⚠️ Nenhum tenant disponível extraído")
             return []
 
         return resultados
 
     except TimeoutException:
-        print("⚠️ Tempo esgotado para localizar os resultados")
+        print("⚠️ Tempo esgotado para localizar a área de Tenants Disponíveis")
         return []
 
     except Exception as e:
-        print(f"⚠️ Erro ao extrair tenants: {e}")
+        print(f"⚠️ Erro ao extrair tenants disponíveis: {e}")
         return []

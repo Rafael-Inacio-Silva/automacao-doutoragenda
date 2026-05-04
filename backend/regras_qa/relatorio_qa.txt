@@ -1,35 +1,80 @@
 ============================================================
-RELATÓRIO DE TESTE QA DO AGENTE
+              RELATÓRIO DE TESTE QA DO AGENTE
 ============================================================
 
-Data da execução: 02/05/2026 02:57:15
+Data da execução: 04/05/2026 01:53:11
 Status geral: executado
-Tenant testado: #93 Dra. Renata Fabiani
+Tenant testado: #586 - Dr. Raphael Palomares Jacobs
 
 Resumo:
-- Total de regras testadas: 1
-- Regras aprovadas: 1
-- Regras com alerta/reprovação: 0
+- Total de regras testadas: 4
+- Regras aprovadas: 3
+- Regras com alerta/reprovação: 1
 
 ============================================================
-RESULTADO DAS REGRAS
+                   RESULTADO DAS REGRAS
 ============================================================
 
 ------------------------------------------------------------
 REGRA 1
 ------------------------------------------------------------
-Nome da regra: Tenant 100% igual ao esperado
+Nome da regra: Regra 1 — Tenant 100% igual ao esperado
 Status: aprovado
 
 Mensagem:
-Tenant encontrado 100% igual ao esperado.
+Tenant encontrado é 100% igual ao tenant esperado.
 
 Esperado:
-#93 Dra. Renata Fabiani
+#586 - Dr. Raphael Palomares Jacobs
 
 Encontrado:
-#93 Dra. Renata Fabiani
+#586 - Dr. Raphael Palomares Jacobs
+
+------------------------------------------------------------
+REGRA 2
+------------------------------------------------------------
+Nome da regra: Regra 2 — Sumarização de Contexto deve estar false
+Status: aprovado
+
+Mensagem:
+Sumarização de Contexto está corretamente desativada.
+
+Esperado:
+false
+
+Encontrado:
+false
+
+------------------------------------------------------------
+REGRA 3
+------------------------------------------------------------
+Nome da regra: Regra 3 — Estágios obrigatórios da conversa
+Status: aprovado
+
+Mensagem:
+Todos os estágios obrigatórios foram encontrados corretamente.
+
+Esperado:
+{'1': 'Conexão', '2': 'Qualificação', '3': 'Agendamento', '4': 'Confirmação'}
+
+Encontrado:
+[{'numero': '1', 'esperado': 'Conexão', 'encontrado': 'Conexão', 'status': 'aprovado'}, {'numero': '2', 'esperado': 'Qualificação', 'encontrado': 'Qualificação', 'status': 'aprovado'}, {'numero': '3', 'esperado': 'Agendamento', 'encontrado': 'Agendamento', 'status': 'aprovado'}, {'numero': '4', 'esperado': 'Confirmação', 'encontrado': 'Confirmação', 'status': 'aprovado'}]
+
+------------------------------------------------------------
+REGRA 4
+------------------------------------------------------------
+Nome da regra: Regra 4 — Validação LLM do Estágio 3 Agendamento
+Status: reprovado
+
+Mensagem:
+FALTA: o prompt não inicia com a linha obrigatória 'AGENDAMENTO:KKKKKKK'. Sem esse início explícito, o Estágio 3 não satisfaz o critério de início exigido. Os demais elementos obrigatórios (consulta da agenda antes de oferecer horários usando buscar_proximos_horarios com parâmetros, fluxo consultar → aguardar retorno → oferecer, e demais regras descritas) estão presentes, mas o início ausente impede aprovação.
+
+Esperado:
+{'ferramenta': 'buscar_proximos_horarios', 'parametros_obrigatorios': ['tipo_agendamento_id', 'quantidade_dias: 90'], 'fluxo_obrigatorio': 'consultar agenda → aguardar retorno → oferecer horários', 'inicio_obrigatorio': ['INFORMAÇÕES SOBRE AGENDAMENTO:', '{{tipos_agendamento_context}}']}
+
+Encontrado:
+{'numero': '3', 'nome': 'Agendamento', 'id_instrucao': 'stage-instruction-2', 'inicio_correto_codigo': True, 'instrucao_preview': 'INFORMAÇÕES SOBRE AGENDAMENTO:\n{{tipos_agendamento_context}}\n \nRegras:\n- Faça UMA pergunta por vez.\n- NUNCA inventar horários.\n \n⚠️ RESTRIÇÃO ABSOLUTA — O QUE PODE SER AGENDADO:\nA Júlia agenda EXCLUSIVAMENTE:\n- Consultas oftalmológicas (PRIMEIRA CONSULTA apenas)\n- Exames com pedido médico\n \nA Júlia NÃO agenda:\n- Retornos ou consultas de retorno\n- Procedimentos cirúrgicos, cirurgias ou qualquer intervenção\n\nSe o paciente solicitar agendamento de RETORNO, cirurgia ou procedimento → NÃO prossiga.\nR... [texto cortado]'}
 
 ============================================================
-FIM DO RELATÓRIO
+                     FIM DO RELATÓRIO
 ============================================================

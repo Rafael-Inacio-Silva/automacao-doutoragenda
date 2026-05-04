@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3e7d126e-926a-48fb-9649-a59fdb5959c9" name="Changes" comment="" />
+    <list default="true" id="3e7d126e-926a-48fb-9649-a59fdb5959c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/acoes_menu_gerenciar_agentes/clicar_aba_conversa.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/acoes_menu_gerenciar_agentes/clicar_visualizar_agente.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/acoes_menu_gerenciar_agentes/extrair_estagios_conversa.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/acoes_menu_gerenciar_agentes/extrair_valor_sumarizacao_contexto.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/acoes_menu_trocar_tenant/clicar_botao_trocar_tenant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/acoes_acesso/clicar_iniciais.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/acoes_acesso/clicar_iniciais.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/acoes_menu/clicar_gerenciar_agente.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/acoes_menu/clicar_gerenciar_agente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/acoes_menu_trocar_tenant/clicar_primeiro_tenant.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/acoes_menu_trocar_tenant/clicar_primeiro_tenant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/acoes_menu_trocar_tenant/extrator_tenant_parecido.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/acoes_menu_trocar_tenant/extrator_tenant_parecido.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/fluxo/testar_agente.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/fluxo/testar_agente.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/regras_qa/log_qa.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/regras_qa/log_qa.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/regras_qa/regras_obrigatorias.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/regras_qa/regras_obrigatorias.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/regras_qa/relatorio_qa.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/regras_qa/relatorio_qa.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/regras_qa/relatorio_qa.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/regras_qa/relatorio_qa.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,34 +59,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.criar_tenant.executor&quot;: &quot;Run&quot;,
-    &quot;Python.iniciar_safari.executor&quot;: &quot;Run&quot;,
-    &quot;Python.inserir_id_medico.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/rafaelinaciosilva/PycharmProjects/Automacao-DrIA/frontend&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.criar_tenant.executor": "Run",
+    "Python.iniciar_safari.executor": "Run",
+    "Python.inserir_id_medico.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.testar_agente.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "teste__qa",
+    "last_opened_file_path": "/Users/rafaelinaciosilva/PycharmProjects/Automacao-DrIA/backend/acoes_menu_gerenciar_agentes",
+    "settings.editor.selected.configurable": "configurable.group.appearance"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend" />
-      <recent name="$PROJECT_DIR$/frontend/public" />
-      <recent name="$PROJECT_DIR$/frontend/app" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/backend" />
+      <recent name="$PROJECT_DIR$/backend/acoes_menu_gerenciar_agentes" />
+      <recent name="$PROJECT_DIR$/backend/acoes_menu_gerenciar_tenant" />
+      <recent name="$PROJECT_DIR$/backend/acoes_zarpon" />
+      <recent name="$PROJECT_DIR$/backend/acoes_comum" />
+      <recent name="$PROJECT_DIR$/backend/fluxo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/frontend/public" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/backend" />
-      <recent name="$PROJECT_DIR$/acoes_robo" />
+      <recent name="$PROJECT_DIR$/backend/acoes_menu_gerenciar_tenant" />
+      <recent name="$PROJECT_DIR$/backend/acoes_menu" />
+      <recent name="$PROJECT_DIR$/backend/acoes_zarpon" />
+      <recent name="$PROJECT_DIR$/backend/acoes_iniciais" />
+      <recent name="$PROJECT_DIR$/backend/acoes_comum" />
     </key>
   </component>
   <component name="SharedIndexes">
